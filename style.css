@@ -15,7 +15,7 @@ body{
     background-size: cover;
     font-family: 'Josefin Sans',sans-serif;
     background-repeat: no-repeat;
-    background-position: ;
+    
 }
 .wrapper{
     display: flex;
@@ -37,20 +37,34 @@ body{
 .logo{
     margin:0 0 70px 0 ;
 }
+.mobile-img{
+    display: none;
+}
 header{
     font-size: 40px;
     text-transform: uppercase;
     letter-spacing: 10px;
     margin-bottom: 20px;
+    transform: translateX(-105%);
+    animation: comein 0.5s ease forwards;
 }
+
+
 span{
     color: hsl(0, 36%, 70%);
     font-weight: 300;
+    
 }
+
 .main-text{
+    color: hsl(0, 36%, 70%);
+    font-weight: 500;
     font-size: 16px;
     font-weight: 500;
     line-height: 25px;
+    transform: translateX(105%);
+    animation: comeinright 0.5s ease forwards;
+    
 }
 .lower{
     max-width:450px;
@@ -58,6 +72,8 @@ span{
  .form{
     margin-top:25px;
     position: relative;
+    transform: translateX(-100%);
+    animation: comein 0.5s ease forwards;
 }
 
 input{
@@ -86,7 +102,7 @@ button{
     position: absolute;
     top: 0;
     left:70%;
-    width: 15%;
+    width: 23%;
     height: 35px;
     border: none;
     border-radius: 25px;
@@ -101,109 +117,42 @@ button{
 button:hover{
     background-image:linear-gradient(135deg,hsl(0, 36%, 70%),hsl(0, 80%, 86%)) ;
 }
-@media screen and (max-width:400px){
+/* Animations */
+@keyframes comein{
+    to{
+        transform:translateX(0)
+    }
+}
+@keyframes comeinright{
+    to{
+        transform:translateX(0)
+    }
+}
+/*Media Query*/
+@media screen and (max-width:768px){
     .left{
         width: 100%;
     }
     .hero{
         display: none;
-    }    
-}
-
-/* .lower{
-    background: url(/images/bg-pattern-desktop.svg);
-    background-repeat: no-repeat;
-    width: 100%;
-}
-.text{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 50vh;
-    
-}
-header{
-    font-size: 32px;
-    width: 55%;
-    text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 40px;
-}
-.span-a{
-    color: hsl(0, 36%, 70%);
-    letter-spacing: 8px;
-}
-.span-b{ 
-    letter-spacing: 10px;
-}
-.span-c{
-    letter-spacing: 8px;
-}
-.main-text{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    font-size: 16px;
-    font-weight: 500px;
-    color: hsl(0, 36%, 70%);
-    line-height: 23px;
-}
-.span-1{
-    width: 100%;
-}
-.span-2{
-    width: 100%;
-    letter-spacing: 0.5px;
-}
-.span-3{
-    width: 95%;
-}
-.form{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    margin-bottom: 50px;
-    width: 100%;
-}
-.input{
-    position: relative;
-}
-input{
-    height: 35px;
-    width: 280px;
-    outline:none;
-    background-color: transparent;
-    border: 2px solid hsl(0, 36%, 70%);
-    border-radius: 20px;
-    color: hsl(0, 36%, 70%);
-}
-.error{
-    position: absolute;
-    left: 65%;
-}
-.btn{
-    position: absolute;
-    left: 75%;
-    width: 40%;
-}
-button{
-    width: 35%;
-    height: 35px;
-    border: none;
-    border-radius: 25px;
-    background-color: hsl(0, 93%, 68%);
-}
-@media (max-width:375px){
-    .wrapper{
-        width: 100%;
+    } 
+    .logo{
+        margin: -30px 0 30px 0;   
     }
-} */
+    .mobile-img{
+        display: block;
+        margin-left:-60px;
+        margin-right:-60px;
+        width: calc(100%+120px);
+    } 
+    header{
+        margin-top: 30px;
+        text-align: center;
+        font-size: 40px;
+    }
+    .main-text{
+        width: 100%;
+        font-size: 9.5px;
+        text-align: center;
+    }  
+}
